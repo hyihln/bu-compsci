@@ -1,0 +1,5 @@
+pwd: print name of working directory
+mkdir: make directories
+rmdir: remove empty directories 
+ls: list directory contents
+mv: move (rename) files

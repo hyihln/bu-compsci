@@ -1,0 +1,3 @@
+
+In a tail recursive function, the last thing done in the function is a recursive call.
+Compilers can optimize tail recursive functions on the architecture level.

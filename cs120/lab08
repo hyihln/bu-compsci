@@ -1,0 +1,7 @@
+.text
+main:	li $s0, 4
+	li $s1, 10
+	add $s2, $s0, $s1
+	bne $s0, $s2, exitif
+	add $s2, $s2, $s1
+exitif:	add $s1, $s0, $s1

@@ -1,0 +1,8 @@
+main:	li $s0, 0
+	li $s1, 5
+for:	beq $s1, 37, exit
+	add $s0, $s0, $s1
+	add $s1, $s1, 1
+	j for
+exit:
+

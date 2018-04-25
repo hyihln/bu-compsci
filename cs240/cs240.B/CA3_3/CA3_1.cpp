@@ -1,0 +1,51 @@
+
+#include <iostream>
+#include <stdlib.h>
+#include "FBLUser.h"
+#include "FBLUserLL.h"
+
+using namespace std;
+
+int main(int argc, char* argv[]){
+
+	FBLUserLL FBLUserLL; //Parenthesis not required to instantiate a class object when no parameters
+
+	string command;
+
+	//TO DO: implement error checking 
+
+	while(true){
+
+		cout << "Enter a command. CREATE, USERS, SORTUSERS, LOGIN, or QUIT.\n";
+
+		cin >> command;
+	
+		if(command == "CREATE"){
+			string u, p, f, l;
+			cin >> u >> p >> f >> l;
+			FBLUserLL.create(u, p, f, l);
+			
+		}
+		else if (command == "USERS"){
+			FBLUserLL.users();
+		}
+		else if (command == "SORTUSERS"){
+			FBLUserLL.sortUsers();
+		}
+		else if (command == "LOGIN"){
+			string id;
+			string pw;
+			cin >> id;
+			cin >> pw;			
+			FBLUserLL.login(id, pw);
+
+		}
+		else if (command == "QUIT"){
+			break;
+		}
+		else{
+			cout << "Command not recognized. ";
+		}
+
+	}
+}

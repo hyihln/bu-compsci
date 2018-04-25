@@ -1,0 +1,15 @@
+
+Struct:
+The good struct is 16 bytes, whereas the bad struct is 24 bytes.
+Structs keep the order of the variables. The compiler will arrange the variables in a way
+that keeps the data type intact. If the next variable in order doesn't fit the memory section, it will pad and start a new memory section. The good struct avoids unnecessary padding.
+
+Union:
+O, 34165590585603663, 1919252047, Overlay
+values are overwritten
+
+Arrays:
+40,80,120 vs 8
+a pointer is 8 bytes. 
+returning size of array vs size of pointer to the array.
+(Warning: size of int* returned)

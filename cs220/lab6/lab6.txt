@@ -1,0 +1,29 @@
+x/16gx
+16 g words on the stack, beginning of stack pointer
+first column address, sec val, third, value
+if in third column, is address of first column + 8
+first column is second value
+
+p &student.name
+$1 = (char **) 0x7fffffffe6b0
+
+p &student.age
+$2 = (int *) 0x7fffffffe6b8
+
+p &new_name
+$3 = (char **) 0x7fffffffe678
+
+offset of student.name from new_name = &student.name - &new_name
+Offset.name = 0x7fffffffe6b0 - 0x7fffffffe678
+Offset.age = 0x7fffffffe6b8 - 0x7fffffffe678
+
+0x000055555555476a <+36>:
+ret_orig = 0x0000555555554724 
+0x7fffffffe6a0:	0x00007fffffffe6c0	0x000055555555476a
+
+0x0000555555554785 <+63>:
+ret_new = 
+
+ret_offset = 0x000055555555476a - 0x0000555555554785
+
+0x00007fffffffe6c0 - 0x7fffffffe678

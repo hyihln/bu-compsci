@@ -1,0 +1,246 @@
+# ASSIGN 1 & 2
+
+1. fib.isfail() if over
+2. break up number: 436|816|212
+	then deal with 0 to 999 
+	and break this to smaller and smaller chunks
+3. n & 1 to test bit
+	right shift
+
+	$ while(n>0){
+		count += n & 1;
+		n = n >> 1;
+	}
+
+# COURSE NOTES
+
+Incomplete example:
+
+	#include <stdio.h>
+	
+	const int foo2 = 100;
+
+	int main(){
+		const int x = 34;
+		unsigned long p;
+		printf("&x = %lx, &foo2 = %lx\n", &x, &foo2);
+		scanf("%p", &p);
+		printf("%p\n", p);
+		*((unsigned int *) p) = 100;
+		printf("x = %d, &foo2 = %d\n", x, foo2);
+		scanf("%p", &p);
+                printf("%p\n", p);
+	}
+
+
+Arrays:
+
+int arr[10];
+	can arr[i]
+	cannot do arr++;
+	cannot change base of an array
+
+string read into char array. 
+every string has to be terminated by null char or 0
+
+Hello!
+[5]: null byte
+p str[6]
+$ = 0 '\000'
+
+Single / double quotes:
+
+"Hello"
+'H'
+
+
+	#include <stdio.h>
+	//DEBUG added
+	#include <string.h>
+
+	void case_invert_and_print(char s[]){
+		unsigned int i;
+		char d[32];
+		i=0;
+
+		//DEBUG added
+		memset(d, 0, 32);
+
+		while(s[i] != '\0'){
+			if(s[i] >= 'a' && s[i] <= 'z'){
+				//taking lowercase character, subtract 'a', get offset of character from 'a'. EX: e - a = 5
+				d[i] = s[i] - 'a' + 'A';
+			}
+			else if(s[i] >= 'A' && s[i] <= 'Z'){
+				d[i] = s[i] - 'A' + 'a';	
+			}
+
+			// will retain characters not in the alphabet. EX: - (dash)
+			else {
+				d[i] = s[i];
+			}
+		}
+	}
+	
+	int main(){
+		char str[32];
+		printf("Enter: ");
+		scanf("%s", str);
+		printf("You entered: %s\n", str);
+		case_invert_and_print(str);
+		return 0;
+	}
+
+
+gdb	b main
+	r
+	n
+	p str
+
+scanf is delimited by space. Treats it as end of input
+
+Enter: Where are you?
+You entered: Where
+
+Enter:John
+You entered: jOHN?U
+// DEBUG: inverted, does not end with null character, and just gets out
+
+
+	struct Student{
+		char name[32];
+		unsigned int age;
+		unsigned int bno;
+		struct family f;
+	}
+
+creating a student
+use
+struct student s1;
+
+Structure guarantees members of structure appear in same order as appear in source code
+
+address of _ will be less than address of _
+combined greater than or equal to
+
+What does it mean to run a 32 bit or 64 bit?
+can either _ or retrieve 64 bits of memory
+registers are 64 bits wide
+
+
+struct order
+compiler trying to optimize time
+
+	struct bad{
+		int x;
+		long y;
+		int z;
+	}
+
+   x    y
+0 [____|____]
+   y2    z
+8 [____|____]
+
+compiler padding
+
+x
+____0000
+y y2
+________
+z
+____0000
+
+
+dot operator to reference it
+s1.name
+s1.age
+
+struct
+size of _ greater than or equal to sum of
+
+union
+size of union is size of largest member 
+
+	union u{
+		char c;
+		int i;
+		long l;
+	}
+
+all of them same address
+only store one
+
+union u u1;
+u1.c
+
+union [_______]
+	   c  i     l
+vs struct [_][____][_______]
+
+
+
+		0   1   2
+	enum e {SUN,MON,TUE,...
+capital
+after each item no semi colon, but commas
+integers
+
+
+	enum my.e{SUN=124,MON, TUES, WED = 6000, Thu}
+will make mon 125, tues 126, thu 6001
+
+choice make it explicit
+		{SUN=124,MON=125,...
+each unique in enum
+when print it out will have integers
+	enum e x;
+	x=SUN;
+	x=6000;
+
+
+
+limit scope.
+if need it global, put it in header file, and include it where needed
+
+
+	#include <stdio.h>
+	
+	struct bad{
+		char c;
+		long l1;
+		short s;
+		long l2;
+		int i;
+		long l3;
+	};
+
+	//typedef struct{
+	struct good{
+		char c;
+		short s;
+		int i;
+		long l1,l2,l3;	
+	} // tooGood;
+
+        typedef struct good Good;
+	
+	union good_u{
+		char c; short s; int i; long l1,l2,l3;
+	};
+
+	enum E {JAN = 1, FEB, MAR, APR, MAY};
+
+	int main(){
+		printf("sizeof(bad) == %d", sizeof( struct bad));
+		return 0;
+	}
+
+
+
+
+	//size of the two structs are different even though exact same members
+
+	//can have integer and interpret it as character and vice versa // same in _ (memory?), just interpreted differently
+
+enumerated type can be as integer, can perform operation, be careful know what's inside

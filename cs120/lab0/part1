@@ -1,0 +1,16 @@
+.data
+message:	.asciiz "Hello world.\n"
+
+.text
+main:	
+	li $s0, 0
+for:	beq $s0, 9, xit
+	la $a0, message
+	li $v0, 4
+	syscall
+	add $s0, $s0, 1
+	j for
+
+xit:
+	li $v0, 10
+	syscall

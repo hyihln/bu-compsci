@@ -1,0 +1,18 @@
+
+4:HDD ACCESS:  0 sec, 000015 micro sec
+32:HDD ACCESS:  0 sec, 000006 micro sec
+128:HDD ACCESS:  0 sec, 000005 micro sec
+1024:HDD ACCESS:  0 sec, 000006 micro sec
+
+1:MEM SERIAL ACCESS:  0 sec, 005853 micro sec
+MEM PAGE STEP ACCESS:  0 sec, 018584 micro sec
+4:MEM SERIAL ACCESS:  0 sec, 022669 micro sec
+MEM PAGE STEP ACCESS:  0 sec, 060243 micro sec
+32:MEM SERIAL ACCESS:  0 sec, 122431 micro sec
+MEM PAGE STEP ACCESS:  0 sec, 528024 micro sec
+128:MEM SERIAL ACCESS:  0 sec, 364733 micro sec
+MEM PAGE STEP ACCESS:  2 sec, 125266 micro sec
+
+perf is a performance analyzing tool, a profiler tool
+it prints statistics about the program
+events are measured at user and kernel level

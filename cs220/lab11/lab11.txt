@@ -1,0 +1,36 @@
+
+FORK
+1. There are two processes going on. There's no guarantee which one will complete first.
+
+2. The child will be printed first because the sleep caused the parent to be held up.
+
+3. 0, 21597
+
+4. 21596, 21164
+
+5. There are two processes going on. 1+/-1 is either 0 or 2.
+
+MULTIFORK
+1. 14, there are two forks so there are 3 processes happening which all returns twice
+
+2. PID 1 is special. It's the init.
+21718: 21164: Line 1
+21718: 21164: Line 2
+21719: 21718: Line 1
+21718: 21164: Line 4
+21720: 21718: Line 2
+21721: 21718: Line 3
+21719: 21718: Line 2
+21720: 21718: Line 4
+21722: 21719: Line 2
+21723: 21720: Line 3
+21719: 1: Line 4
+21722: 21719: Line 4
+21725: 21722: Line 3
+21724: 21719: Line 3
+
+EXEC
+1.
+Child pid = 22768, parent pid = 22767
+My pid is 22768, parent pid is 22767.
+

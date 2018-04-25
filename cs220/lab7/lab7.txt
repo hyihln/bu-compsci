@@ -1,0 +1,72 @@
+
+asm has less instructions
+moving is faster register to register
+	mov    edx,eax
+			#literal zero 0x0
+less of 
+	mov    eax,DWORD PTR [esp+0x8]
+which is 3 instructions.
+
+
+
+NUM_NODES 10
+	ASM:  0 sec, 000000 micro sec
+	C:  0 sec, 000000 micro sec
+	reverse_c
+	35
+	reverse_asm
+	10
+-O2
+	ASM:  0 sec, 000001 micro sec
+	C:  0 sec, 000000 micro sec
+	reverse_c
+	17
+	reverse_asm
+	10
+
+NUM_NODES 100
+	ASM:  0 sec, 000000 micro sec
+	C:  0 sec, 000001 micro sec
+	reverse_c
+	35
+	reverse_asm
+	10
+-O2
+	ASM:  0 sec, 000000 micro sec
+	C:  0 sec, 000000 micro sec
+	reverse_c
+	17
+	reverse_asm
+	10
+
+NUM_NODES 1000
+ASM:  0 sec, 000000 micro sec
+C:  0 sec, 000001 micro sec
+-O2
+ASM:  0 sec, 000001 micro sec
+C:  0 sec, 000000 micro sec
+
+NUM_NODES 10000
+ASM:  0 sec, 000001 micro sec
+C:  0 sec, 000000 micro sec
+-O2
+ASM:  0 sec, 000001 micro sec
+C:  0 sec, 000001 micro sec
+
+NUM_NODES 100000
+ASM:  0 sec, 000000 micro sec
+C:  0 sec, 000000 micro sec
+-O2
+ASM:  0 sec, 000001 micro sec
+C:  0 sec, 000000 micro sec
+
+NUM_NODES 1000000
+ASM:  0 sec, 000000 micro sec
+C:  0 sec, 000001 micro sec
+reverse_c
+35
+reverse_asm
+10
+-O2
+ASM:  0 sec, 000000 micro sec
+C:  0 sec, 000000 micro sec
