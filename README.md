@@ -1,5 +1,5 @@
 # bu-compsci
 [archive]
-/* INCOMPLETE REPOSITORY, /n
-PARTIAL FILES AND ALL OF UPPER 300 400 LEVEL ASSIGNMENTS IN SSH REMOTE LINUX
-*/
+INCOMPLETE REPOSITORY,
+partial files and all of upper 300 400 level assignments in ssh remote linux
+
